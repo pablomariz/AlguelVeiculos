@@ -15,11 +15,17 @@ use App\Http\Controllers\Admin\CidadeController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-Route::get('/', [CidadeController::class, 'cidades']);
+
+
+Route::redirect('/', '/admin/cidades');
+
+
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('cidades', [CidadeController::class, 'cidades'])->name('cidades.listar');
+    Route::get('cidades/adicionar', [CidadeController::class, 'formAdicionar'])->name('cidades.form');
+});
 
 Route::get('/sobre', function(){
     return '<h1>Aluguel veiculos</h1>';

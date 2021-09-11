@@ -13,7 +13,7 @@
             <tbody>
                 @forelse($cidades as $cidade)
                     <tr>
-                        <td>{{$cidade}}</td>
+                        <td>{{$cidade->nome}}</td>
                         <td>Excluir - remover</td>
                     </tr>
                 @empty
@@ -23,6 +23,13 @@
                 @endforelse
             </tbody>
         </table>
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large waves-effect waves-light" href="{{route('admin.cidades.form')}}">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+
     </section>
 
 @endsection
