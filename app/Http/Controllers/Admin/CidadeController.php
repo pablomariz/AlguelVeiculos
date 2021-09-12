@@ -23,7 +23,8 @@ class CidadeController extends Controller
 
     public function formAdicionar()
     {
-        return view('admin.cidades.form');
+        $action = route('admin.cidades.adicionar');
+        return view('admin.cidades.form', compact('action'));
     }
 
     public function adicionar(CidadeRequest $request)
@@ -46,6 +47,22 @@ class CidadeController extends Controller
     {
         Cidade::destroy($id);
         $request->session()->flash('sucesso', "Cidade excluída com sucesso!");
+        return redirect()->route('admin.cidades.listar');
+    }
+
+    public function formEditar($id)
+    {
+        $cidade = Cidade::find($id);
+        $action = route('admin.cidades.editar', $cidade->id);
+        return view('admin.cidades.form', compact('cidade', 'action'));
+    }
+
+    public function editar(CidadeRequest $request, $id)
+    {
+        $cidade = Cidade::find($id);
+        $cidade->update($request->all());
+
+        $request->session()->flash('sucesso', "Cidade $request->nome alterado com sucesso!");
         return redirect()->route('admin.cidades.listar');
     }
 }

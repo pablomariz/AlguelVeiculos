@@ -15,10 +15,12 @@
                     <tr>
                         <td>{{$cidade->nome}}</td>
                         <td>
-                            
-                            <span>
-                                <i class="material-icons blue-text text-accent-2">edit</i>
-                            </span>
+
+                            <a href="{{route('admin.cidades.formEditar', $cidade->id)}}">
+                                <span>
+                                    <i class="material-icons blue-text text-accent-2">edit</i>
+                                </span>
+                            </a>
 
                             <form action="{{route('admin.cidades.deletar', $cidade->id)}}" method="POST" style="display: inline;">
                                 @csrf
