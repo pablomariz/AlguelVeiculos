@@ -10,4 +10,9 @@ class Cidade extends Model
     use HasFactory;
 
     protected $fillable = ['nome'];
+
+    public function veiculos()
+    {
+        return $this->hasMany(Veiculo::class);
+    }
 }

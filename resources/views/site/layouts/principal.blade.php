@@ -19,42 +19,21 @@
     <!-- Menu topo-->
     <nav>
         <div class="container">
-            <div class="nav-wrapper">
-                <a href="/" class="brand-logo">RentCar</a>
-                <ul class="right">
-                    <li>
-                        <a href="{{route('admin.veiculos.index')}}">Veículos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.cidades.index')}}">Cidades</a>
-                    </li>
-                </ul>
+            <div class="nav-wrappe center">
+                <a href="/" class="brand-logo center">RentCar</a>
             </div>
         </div>
     </nav>
 
-    <!-- Conteudo principal-->
+    @yield('slider')
+  
     <div class="container">
         @yield('conteudo-principal')
     </div>
 
-
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-         
-        <script>
 
-            @if (session('sucesso'))
-                M.toast({html: "{{session('sucesso')}}"});
-            @endif
-
-            document.addEventListener('DOMContentLoaded', function(){
-                var elems = document.querySelectorAll('select');
-                var instances = M.FormSelect.init(elems);
-            });
-
-
-        </script>
 
 </body>
 </html>

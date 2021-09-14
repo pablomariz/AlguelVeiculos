@@ -20,6 +20,7 @@ class CreateVeiculosTable extends Migration
             $table->string('combustivel', 50);
             $table->text('descricao')->nullable();
             $table->decimal('preco', 12, 2);
+            $table->string('image', 250)->nullable();
 
             $table->foreignId('cidade_id')->constrained()->onDelete('cascade');
             $table->foreignId('tipo_id')->constrained()->onDelete('cascade');
