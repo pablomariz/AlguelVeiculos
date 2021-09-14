@@ -24,7 +24,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 });
 
 Route::resource('/', App\Http\Controllers\Site\CidadeController::class)->only('index');
-Route::resource('cidades.veiculos', App\Http\Controllers\Site\VeiculoController::class)->only(['index', 'show']);
+Route::resource('veiculos', App\Http\Controllers\Site\VeiculoController::class)->only(['index', 'show']);
 
 
 //parte site

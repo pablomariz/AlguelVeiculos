@@ -6,17 +6,19 @@
 <section class="section">
 
     <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-
-        @foreach($cidades as $cidade)
         
                 
                 <div class="card-panel" style="width:280px; height: 100%;">
                     <i class="material-icons medium green-text text-lighten-3">directions_car</i>
-                    <h4><a href="{{route('admin.veiculos.index')}}">Veículos</a></h4>
+                    <h4><a href="{{route('veiculos.index')}}">Veículos Cadastrados</a></h4>
+                </div>
+
+                <div class="card-panel" style="width:280px; height: 100%;">
+                    <i class="material-icons medium green-text text-lighten-3">directions_car</i>
+                    <h4><a href="{{route('admin.veiculos.index')}}">Cadastrar Veículos</a></h4>
                 </div>
 
             </a>
-        @endforeach
 
 </section>
 
